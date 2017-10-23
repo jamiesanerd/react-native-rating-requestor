@@ -7,7 +7,6 @@ const _config = {
 	message: 'We hope you\'re loving our app. If you are, would you mind taking a quick moment to leave us a positive review?',
 	appStoreId: null,
 	actionLabels: {
-		decline: 'Don\'t ask again',
 		delay: 'Maybe later...',
 		accept: 'Sure!'
 	},
@@ -71,7 +70,6 @@ export default class RatingRequestor {
 			_config.title, 
 			_config.message, 
 			[
-				{ text: _config.actionLabels.decline, onPress: () => { RatingsData.recordDecline(); callback(true, 'decline'); } },
 				{ text: _config.actionLabels.delay, onPress: () => { callback(true, 'delay'); } },
 				{ text: _config.actionLabels.accept, onPress: () => { 
 					RatingsData.recordRated(); 
