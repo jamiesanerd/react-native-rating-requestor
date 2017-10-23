@@ -70,12 +70,12 @@ export default class RatingRequestor {
 			_config.title, 
 			_config.message, 
 			[
-				{ text: _config.actionLabels.delay, onPress: () => { callback(true, 'delay'); } },
 				{ text: _config.actionLabels.accept, onPress: () => { 
 					RatingsData.recordRated(); 
 					callback(true, 'accept');
 					Linking.openURL(storeUrl);
-				}, style: 'cancel' }
+				}, style: 'cancel' },
+				{ text: _config.actionLabels.delay, onPress: () => { callback(true, 'delay'); } }
 			]
 		);	
 	}
